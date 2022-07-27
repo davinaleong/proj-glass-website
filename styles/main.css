@@ -7,13 +7,15 @@ Sections:
     - General Styling - Links Container
     - General Styling - Pro Container
     - General Styling - Games Container
+    - General Styling - Cards Container
   - General Styling - Typography
 */
 
 /** Setup **/
 :root {
-  --clr-white: white;
-  --clr-black: black;
+  --clr-neutral-100: white;
+  --clr-neutral-300: hsl(0, 0%, 93%);
+  --clr-neutral-900: black;
 
   --clr-blue-100: hsl(203, 42%, 77%);
   --clr-blue-400: hsl(188, 79%, 67%);
@@ -27,6 +29,7 @@ Sections:
   --ff-heading: var(--ff-primary);
 
   --fw-regular: 400;
+  --fw-medium: 500;
   --fw-bold: 700;
 
   --fs-base: 16px;
@@ -44,7 +47,7 @@ Sections:
   --fs-body: var(--fs-500);
   --fs-nav: var(--fs-500);
   --fs-name: var(--fs-300);
-  --ff-small: var(--fs-200);
+  --fs-small: var(--fs-200);
 
   --size-0: 0;
   --size-100: 0.25rem;
@@ -64,11 +67,6 @@ Sections:
 /** Setup - End **/
 
 /** General Styling **/
-/* TODO: Remove */
-* {
-  outline: thin solid black;
-}
-
 body {
   --padding: var(--size-400);
 
@@ -131,7 +129,7 @@ body {
 }
 
 .account-type {
-  font-size: var(--fs-300);
+  font-size: var(--fs-small);
 }
 
 /** General Styling - Links Container **/
@@ -150,6 +148,7 @@ body {
 
 .link-text {
   font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
 }
 
 /** General Styling - Pro Container **/
@@ -168,7 +167,7 @@ body {
 }
 
 .pro-text {
-  color: var(--clr-white);
+  color: var(--clr-neutral-100);
   font-weight: var(--fw-bold);
 }
 
@@ -176,7 +175,8 @@ body {
 .games {
   display: grid;
   gap: var(--size-400);
-  padding: var(--size-400);
+  padding: var(--size-700);
+  border-radius: var(--size-500);
   overflow: hidden;
   align-items: center;
 }
@@ -184,7 +184,7 @@ body {
 .status-text {
   font-size: var(--fs-primary-heading);
   font-weight: var(--fw-bold);
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .status-input {
@@ -194,6 +194,72 @@ body {
   padding: var(--size-100);
   background-color: rgba(255, 255, 255, 0.8);
   min-width: var(--width);
+  border: none;
+}
+
+/** General Styling - Cards Container **/
+.cards {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: var(--size-500);
+}
+
+.card {
+  display: grid;
+  gap: var(--size-400);
+  grid-template-columns: 1fr 4fr 0.5fr;
+  grid-auto-flow: column;
+  border-radius: var(--size-500);
+  background-color: var(--clr-neutral-100);
+  padding: var(--size-400);
+}
+
+.card-image {
+  border-radius: var(--size-500);
+}
+
+.card-info {
+  display: grid;
+  gap: var(--size-400);
+}
+
+.card-heading {
+  font-weight: var(--fw-medium);
+  line-height: 1.1;
+}
+
+.card-text {
+  font-size: var(--fs-small);
+}
+
+.progress {
+  --height: var(--size-400);
+  --progress: 60%;
+
+  background-color: var(--clr-neutral-300);
+  border-radius: 100vmax;
+  height: var(--height);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(
+    to bottom left,
+    var(--clr-blue-400),
+    var(--clr-green-400)
+  );
+  inset: 0 auto 0 0;
+  width: var(--progress);
+}
+
+.percentage {
+  text-align: right;
+  color: var(--clr-green-400);
+  font-weight: var(--fw-medium);
 }
 
 /** General Styling - End **/
