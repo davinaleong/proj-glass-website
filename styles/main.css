@@ -135,6 +135,15 @@ body {
   bottom: 5vh;
 }
 
+.github {
+  position: fixed;
+  display: block;
+  top: 2em;
+  right: 2em;
+  text-decoration: none;
+  z-index: 1;
+}
+
 /** General Styling - Dashboard Container **/
 .dashboard {
   min-height: 100%;
@@ -307,5 +316,14 @@ body {
 /** General Styling - Typography **/
 strong {
   font-weight: var(--fw-bold);
+}
+
+a {
+  color: var(--clr-neutral-100);
+  transition: color 0.3s ease-in-out;
+}
+
+a:where(:hover, :focus) {
+  color: var(--clr-neutral-300);
 }
 /** General Styling - Typography - End **/
