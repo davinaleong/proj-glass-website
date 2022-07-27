@@ -5,11 +5,15 @@ Sections:
     - General Styling - Glass Container
     - General Styling - Dashboard Container
     - General Styling - Links Container
+    - General Styling - Pro Container
   - General Styling - Typography
 */
 
 /** Setup **/
 :root {
+  --clr-white: white;
+  --clr-black: black;
+
   --clr-blue-100: hsl(203, 42%, 77%);
   --clr-blue-400: hsl(188, 79%, 67%);
   --clr-blue-900: hsl(210, 31%, 51%);
@@ -54,7 +58,7 @@ Sections:
   --size-1000: 6rem;
   --size-1100: 7rem;
 
-  --content-padding: var(--size-200);
+  --content-padding: var(--size-400);
 }
 /** Setup - End **/
 
@@ -91,10 +95,10 @@ body {
   width: max(48em, 80vw);
   min-height: 80vh;
   display: grid;
-  grid-template-columns: 200px calc(100% - 200px - 2em);
+  grid-template-columns: 250px calc(100% - 250px - 2em);
   gap: var(--size-400);
   overflow-x: auto;
-  border-radius: var(--size-200);
+  border-radius: var(--size-500);
   background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -102,8 +106,8 @@ body {
 .dashboard {
   min-height: 100%;
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
-  gap: var(--size-700);
+  grid-template-rows: 1fr 2fr 7.5em;
+  gap: var(--size-300);
   overflow: hidden;
   padding: var(--content-padding);
 }
@@ -143,8 +147,27 @@ body {
 }
 
 .link-text {
-  font-weight: var(--fw-bold);
   font-size: var(--fs-nav);
+}
+
+/** General Styling - Pro Container **/
+.pro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--size-300);
+  background-image: linear-gradient(
+    to bottom left,
+    var(--clr-blue-400),
+    var(--clr-green-400)
+  );
+  border-radius: var(--size-500);
+  padding: var(--size-400);
+  align-items: center;
+}
+
+.pro-text {
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
 }
 
 /** General Styling - End **/
