@@ -87,6 +87,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--clr-blue-900);
+  position: relative;
 }
 
 /** General Styling - Glass Container **/
@@ -98,7 +99,40 @@ body {
   gap: var(--size-400);
   overflow-x: auto;
   border-radius: var(--size-500);
-  background-color: rgba(255, 255, 255, 0.7);
+  background: var(--clr-neutral-100);
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(1.5rem);
+}
+
+.circle1,
+.circle2 {
+  --size: 20em;
+
+  border-radius: 50%;
+  background: var(--clr-neutral-100);
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.1)
+  );
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  z-index: -1;
+}
+
+.circle1 {
+  top: 5vh;
+  right: 3vw;
+}
+
+.circle2 {
+  left: 3vw;
+  bottom: 5vh;
 }
 
 /** General Styling - Dashboard Container **/
@@ -138,6 +172,11 @@ body {
   flex-direction: column;
   gap: var(--size-600);
   align-self: center;
+  padding-inline: var(--size-600);
+}
+
+.link-image {
+  width: 1.8em;
 }
 
 .link {
@@ -188,10 +227,10 @@ body {
 }
 
 .status-input {
-  --width: 16em;
+  --width: 15em;
 
   border-radius: 100vmax;
-  padding: var(--size-100);
+  padding: var(--size-100) var(--size-300);
   background-color: rgba(255, 255, 255, 0.8);
   min-width: var(--width);
   border: none;
@@ -212,6 +251,7 @@ body {
   border-radius: var(--size-500);
   background-color: var(--clr-neutral-100);
   padding: var(--size-400);
+  max-height: 8em;
 }
 
 .card-image {
@@ -220,12 +260,12 @@ body {
 
 .card-info {
   display: grid;
-  gap: var(--size-400);
+  gap: var(--size-200);
 }
 
 .card-heading {
   font-weight: var(--fw-medium);
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .card-text {
@@ -234,7 +274,7 @@ body {
 
 .progress {
   --height: var(--size-400);
-  --progress: 60%;
+  --progress: 0%;
 
   background-color: var(--clr-neutral-300);
   border-radius: 100vmax;
