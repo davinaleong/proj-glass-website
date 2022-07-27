@@ -2,6 +2,9 @@
 Sections:
   - Setup
   - General Styling
+    - General Styling - Glass Container
+    - General Styling - Dashboard Container
+    - General Styling - Links Container
   - General Styling - Typography
 */
 
@@ -50,6 +53,8 @@ Sections:
   --size-900: 5rem;
   --size-1000: 6rem;
   --size-1100: 7rem;
+
+  --content-padding: var(--size-200);
 }
 /** Setup - End **/
 
@@ -81,20 +86,26 @@ body {
   color: var(--clr-blue-900);
 }
 
+/** General Styling - Glass Container **/
 .glass {
-  width: min(48em, 80vw);
-  min-height: 90vh;
+  width: max(48em, 80vw);
+  min-height: 80vh;
   display: grid;
   grid-template-columns: 200px calc(100% - 200px - 2em);
   gap: var(--size-400);
   overflow-x: auto;
+  border-radius: var(--size-200);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
+/** General Styling - Dashboard Container **/
 .dashboard {
   min-height: 100%;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
-  gap: var(--size-400);
+  gap: var(--size-700);
+  overflow: hidden;
+  padding: var(--content-padding);
 }
 
 .user {
@@ -115,6 +126,25 @@ body {
 
 .account-type {
   font-size: var(--fs-300);
+}
+
+/** General Styling - Links Container **/
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-600);
+  align-self: center;
+}
+
+.link {
+  display: flex;
+  gap: var(--size-400);
+  align-items: center;
+}
+
+.link-text {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-nav);
 }
 
 /** General Styling - End **/
